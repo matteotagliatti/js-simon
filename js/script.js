@@ -26,7 +26,7 @@ function askUser() {
     );
     userNumbers.push(userNumber);
 
-    // check if numbers is correct
+    // check if numbers are correct
     if (numbersValue.includes(userNumbers[i])) {
       guessNumbers.push(userNumbers[i]);
     }
