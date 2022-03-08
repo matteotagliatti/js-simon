@@ -1,3 +1,4 @@
+const outputTimer = document.getElementById("timer");
 const numbers = document.querySelectorAll("li");
 const numbersValue = [];
 
@@ -5,14 +6,19 @@ const numbersValue = [];
 for (let i = 0; i < numbers.length; i++) {
   const number = Math.floor(Math.random() * 100);
   numbers[i].innerHTML = number; // write number in the DOM
-  numbersValue.push(number); // ad value to array
+  numbersValue.push(number); // add value to array
 }
+
+// Set timer and display it in the DOM
+let time = 5;
+outputTimer.innerText = time;
+const timerDisplay = setInterval(changeTime, 1000);
 
 setTimeout(askUser, 5000); // 5 seconds timer
 
 function askUser() {
-  // ul to display: none
-  document.querySelector("ul").style.display = "none";
+  clearInterval(timerDisplay);
+  document.querySelector("ul").style.display = "none"; // ul to display: none
 
   const userNumbers = []; // init userNumbers array
   const guessNumbers = []; // init guessNumbers array
@@ -44,4 +50,12 @@ function askUser() {
       numbers.length
     }</strong>`;
   }
+}
+
+/**
+ * Change time and write it in the DOM
+ */
+function changeTime() {
+  time--;
+  outputTimer.innerText = time;
 }
