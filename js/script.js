@@ -9,7 +9,7 @@ for (let i = 0; i < numbers.length; i++) {
   numbersValue.push(number); // ad value to array
 }
 
-setTimeout(askUser, 10000); // 10 seconds timer
+setTimeout(askUser, 5000); // 5 seconds timer
 
 function askUser() {
   // ul to display: none
@@ -19,22 +19,25 @@ function askUser() {
   // init userNumbers array
   const userNumbers = [];
 
-  // ask numbers to user
+  // ask numbers to user & check if user numbers are correct
   for (let i = 0; i < numbers.length; i++) {
     const userNumber = parseInt(
       prompt(`Write one of the number you have seen. Number ${i + 1}`)
     );
     userNumbers.push(userNumber);
 
+    // check if numbers is correct
     if (numbersValue.includes(userNumbers[i])) {
       guessNumbers.push(userNumbers[i]);
     }
   }
 
-  //
-  const output = (document.querySelector(
+  // output guessed numbers
+  document.querySelector(
     "#output"
-  ).innerHTML = `Hai indovinato i seguenti numeri: <strong>${guessNumbers.join(
+  ).innerHTML = `You have guessed the following numbers: <strong>${guessNumbers.join(
     ", "
-  )}</strong>`);
+  )}</strong>.<br><strong>${guessNumbers.length}</strong> out of <strong>${
+    numbers.length
+  }</strong>`;
 }
