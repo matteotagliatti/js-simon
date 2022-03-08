@@ -1,6 +1,7 @@
 const outputTimer = document.getElementById("timer");
 const numbers = document.querySelectorAll("li");
 const numbersValue = [];
+let time = 5;
 
 // generate number bases on numbers of li
 for (let i = 0; i < numbers.length; i++) {
@@ -10,11 +11,10 @@ for (let i = 0; i < numbers.length; i++) {
 }
 
 // Set timer and display it in the DOM
-let time = 5;
 outputTimer.innerText = time;
 const timerDisplay = setInterval(changeTime, 1000);
 
-setTimeout(askUser, 5000); // 5 seconds timer
+setTimeout(askUser, time * 1000); // 5 seconds timer
 
 function askUser() {
   clearInterval(timerDisplay);
