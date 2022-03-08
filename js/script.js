@@ -21,9 +21,11 @@ function askUser() {
 
   // ask numbers to user & check if user numbers are correct
   for (let i = 0; i < numbers.length; i++) {
-    const userNumber = parseInt(
-      prompt(`Write one of the number you have seen. Number ${i + 1}`)
-    );
+    let userNumber;
+    while (isNaN(userNumber))
+      userNumber = parseInt(
+        prompt(`Write one of the number you have seen. Number ${i + 1}`)
+      );
     userNumbers.push(userNumber);
 
     // check if numbers are correct
