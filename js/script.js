@@ -12,8 +12,7 @@ setTimeout(askUser, 5000); // 5 seconds timer
 
 function askUser() {
   // ul to display: none
-  const ul = document.querySelector("ul");
-  ul.style.display = "none";
+  document.querySelector("ul").style.display = "none";
 
   const userNumbers = []; // init userNumbers array
   const guessNumbers = []; // init guessNumbers array
