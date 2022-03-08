@@ -35,11 +35,15 @@ function askUser() {
   }
 
   // output guessed numbers
-  document.querySelector(
-    "#output"
-  ).innerHTML = `You have guessed the following numbers: <strong>${guessNumbers.join(
-    ", "
-  )}</strong>.<br><strong>${guessNumbers.length}</strong> out of <strong>${
-    numbers.length
-  }</strong>`;
+  const output = document.querySelector("#output");
+
+  if (guessNumbers.length == 0) {
+    output.innerHTML = "None of the numbers chosen are correct.";
+  } else {
+    output.innerHTML = `You have guessed the following numbers: <strong>${guessNumbers.join(
+      ", "
+    )}</strong>.<br><strong>${guessNumbers.length}</strong> out of <strong>${
+      numbers.length
+    }</strong>`;
+  }
 }
