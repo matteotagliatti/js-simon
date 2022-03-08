@@ -1,6 +1,5 @@
 const numbers = document.querySelectorAll("li");
 const numbersValue = [];
-const guessNumbers = [];
 
 // generate number bases on numbers of li
 for (let i = 0; i < numbers.length; i++) {
@@ -16,8 +15,8 @@ function askUser() {
   const ul = document.querySelector("ul");
   ul.style.display = "none";
 
-  // init userNumbers array
-  const userNumbers = [];
+  const userNumbers = []; // init userNumbers array
+  const guessNumbers = []; // init guessNumbers array
 
   // ask numbers to user & check if user numbers are correct
   for (let i = 0; i < numbers.length; i++) {
