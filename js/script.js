@@ -12,7 +12,7 @@ for (let i = 0; i < numbers.length; i++) {
 
 // Set timer and display it in the DOM
 outputTimer.innerText = time;
-const timerDisplay = setInterval(changeTime, 1000);
+const timerDisplay = setInterval(changeTime, 1000); // run changeTime function every second
 
 setTimeout(askUser, time * 1000); // 5 seconds timer
 
