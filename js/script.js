@@ -1,5 +1,6 @@
 const numbers = document.querySelectorAll("li");
 const numbersValue = [];
+const guessNumbers = [];
 
 // generate number bases on numbers of li
 for (let i = 0; i < numbers.length; i++) {
@@ -8,7 +9,7 @@ for (let i = 0; i < numbers.length; i++) {
   numbersValue.push(number); // ad value to array
 }
 
-setTimeout(askUser, 1000);
+setTimeout(askUser, 10000); // 10 seconds timer
 
 function askUser() {
   // ul to display: none
@@ -26,8 +27,14 @@ function askUser() {
     userNumbers.push(userNumber);
 
     if (numbersValue.includes(userNumbers[i])) {
-      console.log("sì");
-    } else {
+      guessNumbers.push(userNumbers[i]);
     }
   }
+
+  //
+  const output = (document.querySelector(
+    "#output"
+  ).innerHTML = `Hai indovinato i seguenti numeri: <strong>${guessNumbers.join(
+    ", "
+  )}</strong>`);
 }
