@@ -14,11 +14,15 @@ for (let i = 0; i < numbers.length; i++) {
 outputTimer.innerText = time;
 const timerDisplay = setInterval(changeTime, 1000); // run changeTime function every second
 
-setTimeout(askUser, time * 1000); // 5 seconds timer
+setTimeout(hideNumbers, time * 1000); // 5 seconds timer
+setTimeout(askUser, time * 1100); // 5,5 seconds timer
+
+function hideNumbers() {
+  document.querySelector("ul").style.display = "none"; // ul to display: none
+}
 
 function askUser() {
   clearInterval(timerDisplay);
-  document.querySelector("ul").style.display = "none"; // ul to display: none
 
   const userNumbers = []; // init userNumbers array
   const guessNumbers = []; // init guessNumbers array
@@ -56,6 +60,7 @@ function askUser() {
  * Change time and write it in the DOM
  */
 function changeTime() {
+  if (time == 0) return;
   time--;
   outputTimer.innerText = time;
 }
