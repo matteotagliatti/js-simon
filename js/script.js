@@ -5,7 +5,7 @@ let time = 5;
 
 // generate number bases on numbers of li
 for (let i = 0; i < numbers.length; i++) {
-  const number = Math.floor(Math.random() * 100);
+  const number = getRandomInt(1, 100); // Generate random int between 1 and 100
   numbers[i].innerHTML = number; // write number in the DOM
   numbersValue.push(number); // add value to array
 }
@@ -58,4 +58,17 @@ function askUser() {
 function changeTime() {
   time--;
   outputTimer.innerText = time;
+}
+
+/**
+ * Generate a number between 2 numbers
+ * @param {*} min
+ * @param {*} max
+ * @returns
+ */
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  let result = Math.floor(Math.random() * (max - min + 1)) + min;
+  return result;
 }
