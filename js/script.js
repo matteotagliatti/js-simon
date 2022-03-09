@@ -60,7 +60,7 @@ function askUser() {
  * Change time and write it in the DOM
  */
 function changeTime() {
-  if (time == 0) return;
+  if (time == 0) return; // Prevet time variable < 0
   time--;
   outputTimer.innerText = time;
 }
